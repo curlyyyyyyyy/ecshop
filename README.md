@@ -2,7 +2,7 @@
 
 ECSHOP, 4.1.8, SQL Injection
 
-Vulnerabilities Reproduction:
+# Vulnerabilities Reproduction:
 Log in to the backend, visit the view_ sendlist.php, and then capture the packet.
 
 Enter the SQL statement to be executed, and then convert it into base64 encoding. Here we take adding the test administrator user as an example.
@@ -38,7 +38,7 @@ Sec-Fetch-User: ?1
 <img width="489" alt="image" src="https://github.com/curlyyyyyyyy/ecshop/assets/155808433/43846d1c-9192-415f-a0fa-9335f730d9e2">
 
 
-4. Refresh the database and find that the user is successfully added, or the logged-in user finds that he can also log in successfully.
+Refresh the database and find that the user is successfully added, or the logged-in user finds that he can also log in successfully.
    <img width="752" alt="image" src="https://github.com/curlyyyyyyyy/ecshop/assets/155808433/f4c894ca-e513-4499-b0a1-ee64c01dac15">
 
  
